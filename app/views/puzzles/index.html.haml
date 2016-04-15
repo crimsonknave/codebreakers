@@ -1,0 +1,19 @@
+%h1 Listing puzzles
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @puzzles.each do |puzzle|
+      %tr
+        %td= link_to 'Show', puzzle
+        %td= link_to 'Edit', edit_puzzle_path(puzzle)
+        %td= link_to 'Destroy', puzzle, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Puzzle', new_puzzle_path
